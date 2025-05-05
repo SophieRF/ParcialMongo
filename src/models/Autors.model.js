@@ -18,7 +18,7 @@ const AutorsSchema = new mongoose.Schema({
     },
     libros: [{
         type: Object,
-        ref: 'Book'
+        ref: 'Libros'
     }]
 }, {
     timestamps: true,

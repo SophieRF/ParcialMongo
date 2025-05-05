@@ -45,6 +45,11 @@ const postBook = async(req, res, next) => {
 
     try {
         const newBook = new Book(req.body);
+
+        if(newBook.authorId === null){
+            return res.json({message: "No se puede crear un libro sin autor asignado"});
+        }
+
         book = await newBook.save();
         res.status(201).json(book);
 
